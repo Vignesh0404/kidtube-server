@@ -29,6 +29,10 @@ app.use("/api/users", userRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
 
+app.get("/api/", (req, res) => {
+  res.json({ message: "Hello, World!" });
+});
+
 
 // app.use(errorHandler);
 app.use(function(req, res, next) {  
