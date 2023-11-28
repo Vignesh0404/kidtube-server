@@ -9,19 +9,19 @@
   "routes": [
     {
       "src": "/api/auth/(.*)",
-      "dest": "/api/auth"
+      "dest": "/routes/auth.js"
     },
     {
       "src": "/api/users/(.*)",
-      "dest": "/api/users"
+      "dest": "/routes/users.js"
     },
     {
       "src": "/api/videos/(.*)",
-      "dest": "/api/videos"
+      "dest": "/routes/videos.js"
     },
     {
       "src": "/api/comments/(.*)",
-      "dest": "/api/comments"
+      "dest": "/routes/comments.js"
     },
     {
       "src": "/(.*)",
