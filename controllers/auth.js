@@ -38,7 +38,6 @@ const loginUser = async (req, res, next) => {
       httpOnly:false,
       sameSite: 'none',
       secure: true,
-      domain: 'kidtube-frontend.vercel.app',
       expires: new Date('9999-12-31T23:59:59Z'),
     }).status(200).json({
       success: true,
@@ -87,7 +86,6 @@ const signupUser = async (req, res, next) => {
       httpOnly:false,
       sameSite: 'none',
       secure: true,
-      domain: 'kidtube-frontend.vercel.app',
       expires: new Date('9999-12-31T23:59:59Z'),
     }).status(200).json({
       success: true,
@@ -114,7 +112,6 @@ const googleAuth = async (req, res, next) => {
         httpOnly:false,
         sameSite: 'none',
         secure: true,
-        domain: 'kidtube-frontend.vercel.app',
         expires: new Date('9999-12-31T23:59:59Z'),
       }).status(200).json({
         success: true,
@@ -134,7 +131,6 @@ const googleAuth = async (req, res, next) => {
         httpOnly:false,
         sameSite: 'none',
         secure: true,
-        domain: 'kidtube-frontend.vercel.app',
         expires: new Date('9999-12-31T23:59:59Z'),
       }).status(200).json({
         success: true,
