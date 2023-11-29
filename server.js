@@ -18,7 +18,6 @@ const port = process.env.PORT || 5000;
 const corsOptions = {
   origin: 'https://kidtube-frontend.vercel.app/',
   credentials: true,
-  exposedHeaders: ["set-cookie"]
 };
 
 app.use(cors(corsOptions));
