@@ -34,6 +34,7 @@ const loginUser = async (req, res, next) => {
 
     const token = generateToken(user._id);
     console.log("Generated token:", token);
+    localStorage.setItem("accessToken", token);
     res.cookie("accessToken", token,  {
       httpOnly:false,
       sameSite: 'none',
@@ -127,6 +128,7 @@ const googleAuth = async (req, res, next) => {
       });
       const token = generateToken(newUserFromGoogle._id);
       console.log("Generated token:", token)
+
       res.cookie("accessToken", token,  {
         httpOnly:false,
         sameSite: 'none',
