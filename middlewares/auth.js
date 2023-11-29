@@ -5,13 +5,13 @@ const protect = async (req, res, next) => {
     // const token = req.cookies.accessToken;
     const cookies = res.get('Set-Cookie');
     const tokenCookie = cookies.find(cookie => cookie.startsWith('accessToken='));
-    console.log('token', token)
-    if (!token) {
+    console.log('token', tokenCookie)
+    if (!tokenCookie) {
       res.status(401);
       return next(new Error("Not authorized, no token"));
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(tokenCookie, process.env.JWT_SECRET);
 
     req.user = { _id: decoded._id };
     next();
