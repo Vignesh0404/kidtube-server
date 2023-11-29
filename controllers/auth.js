@@ -35,9 +35,9 @@ const loginUser = async (req, res, next) => {
     const token = generateToken(user._id);
     console.log("Generated token:", token);
     res.cookie("accessToken", token,  {
-            httpOnly:false,
+            httpOnly:true,
             sameSite: 'lax',
-
+            secure: false
         }).status(200).json({
       success: true,
       user,
@@ -82,9 +82,9 @@ const signupUser = async (req, res, next) => {
     console.log("Generated token:", token);
 
     res.cookie("accessToken", token,  {
-            httpOnly:false,
+            httpOnly:true,
             sameSite: 'lax',
-
+            secure: false
         }).status(200).json({
       success: true,
       user,
@@ -107,8 +107,9 @@ const googleAuth = async (req, res, next) => {
       console.log("Generated token:", token);
 
       res.cookie("accessToken", token,  {
-            httpOnly:false,
+            httpOnly:true,
             sameSite: 'lax',
+            secure: false
         }).status(200).json({
         success: true,
         user,
@@ -124,9 +125,9 @@ const googleAuth = async (req, res, next) => {
       const token = generateToken(newUserFromGoogle._id);
       console.log("Generated token:", token)
       res.cookie("accessToken", token,  {
-            httpOnly:false,
+            httpOnly:true,
             sameSite: 'lax',
-
+            secure: false
         }).status(200).json({
         success: true,
         user: newUserFromGoogle,
