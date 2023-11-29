@@ -2,8 +2,8 @@ const jwt = require("jsonwebtoken");
 
 const protect = async (req, res, next) => {
   try {
-    // const token = req.cookies.accessToken;
-    const token = localStorage.getItem("accessToken");
+    const token = req.cookies.accessToken;
+    // const token = localStorage.getItem("accessToken");
     console.log('token', token)
     if (!token) {
       res.status(401);
