@@ -34,7 +34,7 @@ const loginUser = async (req, res, next) => {
 
     const token = generateToken(user._id);
     console.log("Generated token:", token);
-    localStorage.setItem("accessToken", token);
+    // localStorage.setItem("accessToken", token);
     res.cookie("accessToken", token,  {
       httpOnly:false,
       sameSite: 'none',
