@@ -37,8 +37,8 @@ const loginUser = async (req, res, next) => {
     res.cookie("accessToken", token,  {
       httpOnly:false,
       sameSite: 'none',
-      secure: false,
-      domain: 'https://kidtube-frontend.vercel.app/'
+      secure: true,
+      domain: 'kidtube-frontend.vercel.app'
     }).status(200).json({
       success: true,
       user,
@@ -85,8 +85,8 @@ const signupUser = async (req, res, next) => {
     res.cookie("accessToken", token,  {
       httpOnly:false,
       sameSite: 'none',
-      secure: false,
-      domain: 'https://kidtube-frontend.vercel.app/'
+      secure: true,
+      domain: 'kidtube-frontend.vercel.app'
     }).status(200).json({
       success: true,
       user,
@@ -111,8 +111,8 @@ const googleAuth = async (req, res, next) => {
       res.cookie("accessToken", token,  {
         httpOnly:false,
         sameSite: 'none',
-        secure: false,
-        domain: 'https://kidtube-frontend.vercel.app/'
+        secure: true,
+        domain: 'kidtube-frontend.vercel.app'
       }).status(200).json({
         success: true,
         user,
@@ -130,8 +130,8 @@ const googleAuth = async (req, res, next) => {
       res.cookie("accessToken", token,  {
         httpOnly:false,
         sameSite: 'none',
-        secure: false,
-        domain: 'https://kidtube-frontend.vercel.app/'
+        secure: true,
+        domain: 'kidtube-frontend.vercel.app'
       }).status(200).json({
         success: true,
         user: newUserFromGoogle,
