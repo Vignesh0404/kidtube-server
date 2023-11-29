@@ -1,14 +1,29 @@
 const User = require("../models/User");
 const Video = require("../models/Video");
+const bcryptjs = require("bcryptjs");
 
 const updateUser = async (req, res, next) => {
   const { id } = req.params;
-  if (id === req.user._id) {
+  const { name, password, img } = req.body;
+
+  // Hash the password
+  const salt = await bcryptjs.genSalt(10);
+  const hashedPassword = await bcryptjs.hash(password, salt);
+
+  if (!name || !password || !img) {
+    res.status(400);
+    return next(new Error("name, password & img fields are required"));
+  }
+  if (id === req.user._id)
+   {
     try {
       const updatedUser = await User.findByIdAndUpdate(
         id,
         {
-          $set: req.body,
+          $set: {
+            name,
+            img,
+            password: hashedPassword},
         },
         {
           new: true,
