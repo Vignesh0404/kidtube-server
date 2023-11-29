@@ -33,11 +33,13 @@ app.get("/api/", (req, res) => {
   res.json({ message: "Hello, World!" });
 });
 
+app.set("trust proxy", 1);
 
 // app.use(errorHandler);
 app.use(function(req, res, next) {  
   res.header('Access-Control-Allow-Origin', req.headers.origin);
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Credentials', true);
   next();
 });
 
