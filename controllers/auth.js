@@ -107,6 +107,7 @@ const googleAuth = async (req, res, next) => {
       res.cookie("accessToken", token,  {
         httpOnly:true,
         sameSite: 'lax',
+        secure: false
       }).status(200).json({
         success: true,
         user,

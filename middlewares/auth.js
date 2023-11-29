@@ -3,8 +3,6 @@ const jwt = require("jsonwebtoken");
 const protect = async (req, res, next) => {
   try {
     const token = req.cookies.accessToken;
-    const cookies = res.get('Set-Cookie');
-    const tokenCookie = cookies.find(cookie => cookie.startsWith('accessToken='));
     console.log('token', token)
     if (!token) {
       res.status(401);
