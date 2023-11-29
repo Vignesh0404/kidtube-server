@@ -18,6 +18,7 @@ const port = process.env.PORT || 5000;
 const corsOptions = {
   origin: true,
   credentials: true,
+  exposedHeaders: ["set-cookie"]
 };
 
 app.use(cors(corsOptions));
