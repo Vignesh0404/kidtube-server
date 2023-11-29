@@ -16,7 +16,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: "https://kidtube-frontend.vercel.app/",
+  origin: true,
   credentials: true,
 };
 
