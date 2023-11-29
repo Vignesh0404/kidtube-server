@@ -34,7 +34,6 @@ app.get("/api/", (req, res) => {
   res.json({ message: "Hello, World!" });
 });
 
-app.set("trust proxy", 1);
 
 // app.use(errorHandler);
 app.use(function(req, res, next) {  
