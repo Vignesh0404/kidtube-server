@@ -10,8 +10,8 @@ const protect = async (req, res, next) => {
       res.status(401);
       return next(new Error("Not authorized, no token"));
     }
-
-    const decoded = jwt.verify(tokenCookie, process.env.JWT_SECRET);
+    const token = tokenCookie.split('=')[1];
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     req.user = { _id: decoded._id };
     next();
